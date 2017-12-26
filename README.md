@@ -2,13 +2,14 @@
 分布式事物   
 ## 设计文档  
 ### 所使用技术 springboot + mybatis + mq(rabbitmq) + retrofit2.0 + rxjava 
-### 消息存储 mysql,消息分表实现
+### 消息存储 mysql分表实现
 ### 博客链接:https://my.oschina.net/xliangbo/blog/1545040#comment-list
 
 ### 基于发布订阅topic模式
 ![Alt text](https://github.com/smartxing/imageflod/blob/master/a.png)
 ### 实现思路
 ![Alt text](https://github.com/smartxing/imageflod/blob/master/b.png)
+oh my gad 少了一个确认环节，这个环节很简单把，自己想一下就ok了，这偶也不补充了
 
 ### 1 启动 server         
 
