@@ -1,10 +1,10 @@
-# flexible-transcation
-分布式事物
-##使用文档 
-####1 启动 server         
+# flexible-transcation  
+分布式事物 
+##使用文档   
+###1 启动 server         
    
 
-####2 向server申请，创建一个生产者，消息提供方  
+###2 向server申请，创建一个生产者，消息提供方  
 >curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
 >>     \"appName\": \"mytest-producer\",     
 >>     \"appDesc\": \"偶是一个测试生产者\",     
@@ -13,7 +13,7 @@
 返回结果： 这个结果需要给生成方，发布消息时候 需要用到 
 {"appName":"mytest-producer","appId":"d37137cc-f3d4-4af8-8dc1-e7e4aa904555","appKey":"4442fad0-5b45-4ac1-9d62-b10b7a607bad"} 
 
-####3 向server申请  创建一个订阅者， 消息消费方
+###3 向server申请  创建一个订阅者， 消息消费方
 > curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
 >>     \"appName\": \"mytest-consumer\",     
 >>     \"appDesc\": \"偶是一个测试消费者\",     
@@ -22,7 +22,7 @@
 返回结果：
 {"appName":"mytest-consumer","appId":"8b441880-8f37-431c-b8b8-3abed6f51858","appKey":"8fef4f7a-0928-45aa-9bd6-74e1092abb8d"}    
 
-####4 创建主题
+###4 创建主题
 
 > curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{
 >>     \"topic\": \"ftmtest\",
