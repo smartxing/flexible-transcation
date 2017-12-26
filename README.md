@@ -1,7 +1,13 @@
 # flexible-transcation  
 分布式事物   
 ## 设计文档  
+### 所使用技术 springboot + mybatis + mq(rabbitmq) + retrofit2.0 + rxjava  
+### 之前写的博客链接:https://my.oschina.net/xliangbo/blog/1545040#comment-list 基于此方案实现
+###基于发布订阅topic模式
 ![Alt text](https://github.com/smartxing/imageflod/blob/master/a.png)
+###实现思路
+![Alt text](https://github.com/smartxing/imageflod/blob/master/b.png)
+
 ### 1 启动 server         
    
 
@@ -123,6 +129,11 @@ public class ConsumerCheckerImpl extends ConsumerChecker {
     }
 }
 ```
+
+## 还未实现功能，待实现的功能 
+### 1 消息可视化管理 manager
+### 2 消息分表（目前只是个消息表，如果真实使用还需要分表实现）
+### 3 缺少完整的基础设施，服务注册发现，tid消息追踪，服务监控 （重点是监控） 考虑到每个公司实现方式不一致，所以把这些都剥离掉了
 
 
 
