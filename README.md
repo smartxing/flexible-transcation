@@ -136,7 +136,7 @@ public class ConsumerCheckerImpl extends ConsumerChecker {
 
 
 
-#### 联系作者：qq：787069354 手机 18758002627 ，  欢迎勾搭（不限男女 哈哈哈哈哈）
+#### 联系作者：qq：787069354 邮箱:787069354@qq.com ，欢迎勾搭
 
 
 
