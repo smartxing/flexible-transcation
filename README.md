@@ -114,10 +114,10 @@ public class ProducerExcample {
 ```
 
 
-##### 5 消费者示列：
+##### 5 消费者示列：只需要继承ConsumerChecker ,如果返回true， 消息会自动确认，false 消息等待确认
 ```java
 @Configuration
-public class ConsumerCheckerImpl extends ConsumerChecker {
+public class ConsumerListener extends ConsumerChecker {
 
     private Logger logger = LoggerFactory.getLogger(ConsumerCheckerImpl.class);
 
