@@ -1,6 +1,7 @@
 # flexible-transcation  
 分布式事物   
-## 使用文档  
+## 设计文档  
+![Alt text](https://github.com/smartxing/imageflod/blob/master/a.png)
 ### 1 启动 server         
    
 
