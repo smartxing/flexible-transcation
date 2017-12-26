@@ -1,7 +1,7 @@
 # flexible-transcation
 分布式事物
 ##使用文档 
-####1 启动 server 
+####1 启动 server         
    
 
 ####2 向server申请，创建一个生产者，消息提供方  
