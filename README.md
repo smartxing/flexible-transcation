@@ -1,10 +1,10 @@
 # flexible-transcation  
 分布式事物   
-##使用文档  
-###1 启动 server         
+## 使用文档  
+### 1 启动 server         
    
 
-###2 向server申请，创建一个生产者，消息提供方  
+### 2 向server申请，创建一个生产者，消息提供方  
 >curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
 >>     \"appName\": \"mytest-producer\",     
 >>     \"appDesc\": \"偶是一个测试生产者\",     
@@ -13,7 +13,7 @@
 返回结果： 这个结果需要给生成方，发布消息时候 需要用到 
 {"appName":"mytest-producer","appId":"d37137cc-f3d4-4af8-8dc1-e7e4aa904555","appKey":"4442fad0-5b45-4ac1-9d62-b10b7a607bad"} 
 
-###3 向server申请  创建一个订阅者， 消息消费方
+### 3 向server申请  创建一个订阅者， 消息消费方
 > curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
 >>     \"appName\": \"mytest-consumer\",     
 >>     \"appDesc\": \"偶是一个测试消费者\",     
@@ -22,7 +22,7 @@
 返回结果：
 {"appName":"mytest-consumer","appId":"8b441880-8f37-431c-b8b8-3abed6f51858","appKey":"8fef4f7a-0928-45aa-9bd6-74e1092abb8d"}    
 
-###4 创建主题
+### 4 创建主题
 
 > curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{
 >>     \"topic\": \"ftmtest\",
@@ -32,7 +32,7 @@
 > }" "http://127.0.0.1:8080/flexible-transcation/api/v1/manager/topic"  
 返回结果：{"topicId":"d2fed037-649e-4e69-8906-69c5932d8369","topicName":"ftmtest"}
 
-####5 消费者向server申请 订阅主题
+#### 5 消费者向server申请 订阅主题
 
 >curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{
 >>     \"subId\": \"8b441880-8f37-431c-b8b8-3abed6f51858\",
@@ -40,8 +40,8 @@
 >>     \"topicId\": \"d2fed037-649e-4e69-8906-69c5932d8369\"
 >}" "http://127.0.0.1:8080/flexible-transcation/api/v1/manager/subscribe"
 
-##准备工作结束，接入开发流程 示列： 可参考example   
-###生产者示列：
+## 准备工作结束，接入开发流程 示列： 可参考example   
+### 生产者示列：
 ##### 1 创建工程，添加配置
 ftm.publish.app.key=    
 ftm.publish.app.id= 
@@ -81,7 +81,7 @@ public class ProducerCheckImpl extends ProducerChecker {
 }
 
 ```
-#####4 生产者示列
+##### 4 生产者示列
 ```java
 @Component
 public class ProducerExcample {
@@ -107,7 +107,7 @@ public class ProducerExcample {
 ```
 
 
-####5 消费者示列：
+##### 5 消费者示列：
 ```java
 @Configuration
 public class ConsumerCheckerImpl extends ConsumerChecker {
