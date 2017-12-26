@@ -1,6 +1,6 @@
 # flexible-transcation  
-分布式事物 
-##使用文档   
+分布式事物   
+##使用文档  
 ###1 启动 server         
    
 
@@ -29,7 +29,7 @@
 >>     \"topicDesc\": \"测试主题哦\",
 >>     \"maxRetryTime\": 3,
 >>     \"retryInterval\": 30
-> }" "http://192.168.20.50:8080/flexible-transcation/api/v1/manager/topic"  
+> }" "http://127.0.0.1:8080/flexible-transcation/api/v1/manager/topic"  
 返回结果：{"topicId":"d2fed037-649e-4e69-8906-69c5932d8369","topicName":"ftmtest"}
 
 ####5 消费者向server申请 订阅主题
@@ -38,7 +38,7 @@
 >>     \"subId\": \"8b441880-8f37-431c-b8b8-3abed6f51858\",
 >>     \"rountingKey\": \"mytest-routingkey\",
 >>     \"topicId\": \"d2fed037-649e-4e69-8906-69c5932d8369\"
->}" "http://192.168.20.50:8080/flexible-transcation/api/v1/manager/subscribe"
+>}" "http://127.0.0.1:8080/flexible-transcation/api/v1/manager/subscribe"
 
 ##准备工作结束，接入开发流程 示列： 可参考example
 ###生产者示列：
