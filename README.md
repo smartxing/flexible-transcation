@@ -10,8 +10,9 @@
 ### 实现思路
 ![Alt text](https://github.com/smartxing/imageflod/blob/master/b.png)
 oh my gad 少了一个确认环节，这个环节很简单把，自己想一下就ok了，这偶也不补充了
-
-### 1 启动 server         
+## 接入前准备工作，申请阶段
+### 1 启动 server         
+### 接入
 
 ### 2 向server申请，创建一个生产者，消息提供方  
 >curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
