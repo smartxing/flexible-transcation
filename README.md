@@ -43,14 +43,14 @@
 ## 准备工作结束，接入开发流程 示列： 可参考example   
 ### 生产者示列：
 ##### 1 创建工程，添加配置
-ftm.publish.app.key=    
-ftm.publish.app.id= 
-ftm.asking.target.server.addr=  
-ftm.transcation.client.queue=   
-ftm.transcation.message.mq.address= 
-ftm.transcation.message.mq.username=    
-ftm.transcation.message.mq.password=    
-ftm.transcation.message.mq.virtual-host=  
+ftm.publish.app.key=        
+ftm.publish.app.id=     
+ftm.asking.target.server.addr=      
+ftm.transcation.client.queue=       
+ftm.transcation.message.mq.address=     
+ftm.transcation.message.mq.username=           
+ftm.transcation.message.mq.password=         
+ftm.transcation.message.mq.virtual-host=    
 ##### 2 引入client包
 ```xml
         <dependency>
