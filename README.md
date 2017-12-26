@@ -69,7 +69,7 @@ ftm.transcation.message.mq.virtual-host=
         </dependency>
 ```
   
-##### 3 实现 ProducerCheker
+##### 3 消息生产者实现 只需要实现ProducerCheker即可 如下：
 ```java
 @Configuration
 public class ProducerCheckImpl extends ProducerChecker {
@@ -90,7 +90,7 @@ public class ProducerCheckImpl extends ProducerChecker {
 }
 
 ```
-##### 4 生产者示列
+###### 4 生产者示列
 ```java
 @Component
 public class ProducerExcample {
