@@ -40,7 +40,7 @@
 >>     \"topicId\": \"d2fed037-649e-4e69-8906-69c5932d8369\"
 >}" "http://127.0.0.1:8080/flexible-transcation/api/v1/manager/subscribe"
 
-##准备工作结束，接入开发流程 示列： 可参考example
+##准备工作结束，接入开发流程 示列： 可参考example   
 ###生产者示列：
 ##### 1 创建工程，添加配置
 ftm.publish.app.key=    
