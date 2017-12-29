@@ -1,8 +1,17 @@
 # flexible-transcation  
 分布式事物   
-## 使用文档  
-### 1 启动 server         
-   
+## 设计文档  
+### 所使用技术 springboot + mybatis + mq(rabbitmq) + retrofit2.0 + rxjava 
+### 消息存储 mysql分表实现
+### 博客链接:https://my.oschina.net/xliangbo/blog/1545040#comment-list
+
+### 基于发布订阅topic模式
+![Alt text](https://github.com/smartxing/imageflod/blob/master/a.png)
+### 实现思路
+![Alt text](https://github.com/smartxing/imageflod/blob/master/b.png)
+oh my gad 少了一个确认环节，这个环节很简单把，自己想一下就ok了，这偶也不补充了
+## 接入前准备工作，申请阶段
+### 1 启动 server         
 
 ### 2 向server申请，创建一个生产者，消息提供方  
 >curl -X POST --header "Content-Type: application/json" --header "Accept: */*"  -d "{    
@@ -60,7 +69,7 @@ ftm.transcation.message.mq.virtual-host=
         </dependency>
 ```
   
-##### 3 实现 ProducerCheker
+##### 3 消息生产者实现 只需要实现ProducerCheker即可 如下：
 ```java
 @Configuration
 public class ProducerCheckImpl extends ProducerChecker {
@@ -81,7 +90,7 @@ public class ProducerCheckImpl extends ProducerChecker {
 }
 
 ```
-##### 4 生产者示列
+###### 4 生产者示列
 ```java
 @Component
 public class ProducerExcample {
@@ -91,13 +100,11 @@ public class ProducerExcample {
 
     public void test() {
         try {
-            FtmPublishDto ftmPublishDto = new FtmPublishDto();
-            FtmResponse ftmResponse = transcationMsgClient.publish(ftmPublishDto);
+            FtmResponse ftmResponse = transcationMsgClient.publish(new FtmPublishDto());
             /*
                 执行业务
-            */
-            FtmConfirmDto ftmConfirmDto = new FtmConfirmDto();
-            transcationMsgClient.comfirm(ftmConfirmDto);
+            */ 
+            transcationMsgClient.comfirm(new FtmConfirmDto());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -107,10 +114,10 @@ public class ProducerExcample {
 ```
 
 
-##### 5 消费者示列：
+##### 5 消费者示列：只需要继承ConsumerChecker ,如果返回true， 消息会自动确认，false 消息等待确认
 ```java
 @Configuration
-public class ConsumerCheckerImpl extends ConsumerChecker {
+public class ConsumerListener extends ConsumerChecker {
 
     private Logger logger = LoggerFactory.getLogger(ConsumerCheckerImpl.class);
 
@@ -122,6 +129,14 @@ public class ConsumerCheckerImpl extends ConsumerChecker {
     }
 }
 ```
+
+### 还未实现功能，待实现的功能 
+#### 1 消息可视化管理 
+#### 2 缺少完整的基础设施，服务注册发现，tid消息追踪，服务监控 （重点是监控到位,什么都可以少 监控不能少） 考虑到每个公司实现方式不一致，所以把这些都剥离掉了
+
+
+
+#### 联系作者：qq：787069354 邮箱:787069354@qq.com ，欢迎勾搭
 
 
 
