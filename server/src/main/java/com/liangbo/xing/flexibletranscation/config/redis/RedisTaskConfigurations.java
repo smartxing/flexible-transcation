@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.testng.collections.Sets;
 import redis.clients.jedis.*;
 
 import java.text.SimpleDateFormat;
@@ -23,9 +24,9 @@ public class RedisTaskConfigurations {
 
     @Bean
     public JedisCluster getJedisCluster() {
-        Set<HostAndPort> jedisClusterNodes = new HashSet<>();
-        for (String hostAndPort : redisProperties.getAddressList()) {
-            String[] hp = hostAndPort.split(":");
+        Set<HostAndPort> jedisClusterNodes = Sets.newHashSet();
+        for (String hps : redisProperties.getAddressList()) {
+            String[] hp = hps.split(":");
             jedisClusterNodes.add(new HostAndPort(hp[0], Integer.parseInt(hp[1])));
         }
         GenericObjectPoolConfig config = new GenericObjectPoolConfig();
