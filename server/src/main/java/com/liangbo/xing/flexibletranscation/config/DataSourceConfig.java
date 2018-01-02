@@ -27,21 +27,6 @@ public class DataSourceConfig {
         dataSource.setUrl(env.getProperty("ftm.master.jdbc.url"));
         dataSource.setUsername(env.getProperty("ftm.master.jdbc.username"));
         dataSource.setPassword(env.getProperty("ftm.master.jdbc.password"));
-        dataSource.setInitialSize(Integer.parseInt(env.getProperty("datasource.initialSize")));
-        dataSource.setMinIdle(Integer.parseInt(env.getProperty("datasource.minIdle")));
-        dataSource.setMaxActive(Integer.parseInt(env.getProperty("datasource.maxActive")));
-        dataSource.setMaxWait(Long.parseLong(env.getProperty("datasource.maxWait")));
-        dataSource.setRemoveAbandoned(Boolean.parseBoolean(env.getProperty("datasource.removeAbandoned")));
-        dataSource.setRemoveAbandonedTimeout(Integer.parseInt(env.getProperty("datasource.removeAbandonedTimeout")));
-        dataSource.setTimeBetweenEvictionRunsMillis(Long.parseLong(env
-                .getProperty("datasource.timeBetweenEvictionRunsMillis")));
-        dataSource.setMinEvictableIdleTimeMillis(Long.parseLong(env
-                .getProperty("datasource.minEvictableIdleTimeMillis")));
-        dataSource
-                .setPoolPreparedStatements(Boolean.parseBoolean(env.getProperty("datasource.poolPreparedStatements")));
-        dataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(env
-                .getProperty("datasource.maxPoolPreparedStatementPerConnectionSize")));
-        dataSource.setValidationQuery(env.getProperty("datasource.validationQuery"));
         return dataSource;
     }
 
