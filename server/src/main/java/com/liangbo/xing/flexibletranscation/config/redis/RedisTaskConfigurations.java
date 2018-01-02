@@ -23,14 +23,9 @@ public class RedisTaskConfigurations {
 
     @Bean
     public JedisCluster getJedisCluster() {
-        if (redisProperties.getAddressList().size() == 1) {
-            return null;
-        }
         Set<HostAndPort> jedisClusterNodes = new HashSet<>();
-        //Jedis Cluster will attempt to discover cluster nodes automatically
         for (String hostAndPort : redisProperties.getAddressList()) {
             String[] hp = hostAndPort.split(":");
-
             jedisClusterNodes.add(new HostAndPort(hp[0], Integer.parseInt(hp[1])));
         }
         GenericObjectPoolConfig config = new GenericObjectPoolConfig();
